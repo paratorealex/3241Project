@@ -6,7 +6,8 @@ create table dbo.PRODUCT
 		Brand			varchar(20)		not null,
 		MakerID			int				not null,
 		Outfront		int				not null,
-		Inback			int,					
+		Inback			int,
+		DNo				int				not null,					
 		WhCost			decimal(6,2)	not null,
 		Certified		varchar(15),
 		ShelfPrice		decimal(6,2)	not null,
@@ -15,7 +16,7 @@ create table dbo.PRODUCT
 		Shelf			varchar(5)		not null,
 		Tag				varchar(15),
 		MemberID		int				not null,
-		DNo				int				not null,
+		
 	primary key (UPC),
   );
 
