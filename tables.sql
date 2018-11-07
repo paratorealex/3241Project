@@ -14,8 +14,6 @@ create table dbo.PRODUCT
 		Location		varchar(20)		not null,				
 		Bin			varchar(20)		not null,
 		Shelf			varchar(5)		not null,
-		Tag			varchar(15),
-		MemberID		int			not null,
 		primary key (UPC),
   );
   
