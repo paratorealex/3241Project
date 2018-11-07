@@ -18,6 +18,12 @@ create table dbo.PRODUCT
 		MemberID		int			not null,
 		primary key (UPC),
   );
+  
+create table dbo.tags
+	(	UPC			bigint			not null,
+	 	TagName			varchar(20)		not null,
+	 	primary key (UPC,TagName),
+	 );
 
 create table dbo.CUSTOMERS
 	 (	Fname			varchar(15)		not null,
