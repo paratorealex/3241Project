@@ -8,7 +8,7 @@ INSERT INTO DISTRIBUTOR
 VALUES (2, 'bb',1111111112,'the moon')
 
 INSERT INTO PRODUCT
-VALUES(74570014002, 'Chocolate', 'pint', 8, 'Haagen-Dazs', 1, 4, NULL, 4.57, 'Vegetarian', 5.49, 'CheckoutCooler', 'left', 'top', 'Frozen', 1, 2)
+VALUES(74570014002, 'Chocolate', 'pint', 8, 'Haagen-Dazs', 1, 4, NULL,2, 4.57, 'Vegetarian', 5.49, 'CheckoutCooler', 'left', 'top', 'Frozen', 1)
 
 
 INSERT INTO MANAGERS
