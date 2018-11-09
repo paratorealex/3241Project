@@ -14,13 +14,13 @@ create table dbo.PRODUCT
 		Location		varchar(20)		not null,				
 		Bin			varchar(20)		not null,
 		Shelf			varchar(5)		not null,
-		primary key (UPC),
+		primary key (UPC)
   );
   
 create table dbo.tags
 	(	UPC			bigint			not null,
 	 	TagName			varchar(20)		not null,
-	 	primary key (UPC,TagName),
+	 	primary key (UPC,TagName)
 	 );
 
 create table dbo.CUSTOMERS
