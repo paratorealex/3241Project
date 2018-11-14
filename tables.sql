@@ -45,8 +45,8 @@ create table dbo.MANAGERS
 	 Primary Key (ManagerID)
 	 );
 create table BINS
-	(	BINNAME				varchar(30)		not null,
-		primary key (BINNAME)
+	(	BinName				varchar(30)		not null,
+		primary key (BinName)
 	);
 	 
 create table dbo.PRODUCTS
