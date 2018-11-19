@@ -2,7 +2,10 @@ create table dbo.TAGS
 	(	TagName 		varchar(30) 	not	null,
 		primary key (TagName)
 	);
-
+create table dbo.BRANDS
+	(	BrandName		varchar(30)		not null,
+		primary key (BrandName)
+	);
 create table dbo.CERTIFICATIONS
 	(	CertName		varchar(30)		not null,
 		primary key (CertName)
@@ -15,12 +18,13 @@ create table dbo.DISTRIBUTORS
 		Address				varchar(50)		not null
 		primary key (DistID)
 	);	
-create table dbo.MAKER
+create table dbo.MAKERS
 	(	MakerID				int				not null,
 		Name				varchar(30)		not null,
 		Phone				varchar(30)		not null,
-		Brand				varchar(30)
+		BrandName			varchar(30)
 		Primary key (MakerID)
+		foreign key (BrandName) references Brands (BrandName)
 	);	
 	
 create table dbo.CUSTOMERS
@@ -28,8 +32,8 @@ create table dbo.CUSTOMERS
 		Fname			varchar(15)		not null,
 		Lname			varchar(15)		not null,
 		Email			varchar(30),
-		Phone			int,
-		CreditCardNum	int,			
+		Phone			varchar(30)	,
+		CreditCardNum	varchar(30)	,			
 	primary key (MemberID),
 	  );
 	  
@@ -38,39 +42,40 @@ create table dbo.MANAGERS
 		FName				varchar(15)		not null,
 		Lname				varchar(15)		not null,
 		Email				varchar(30)		not null,
-		Phone				varchar(20)		not null,
+		Phone				varchar(30)		not null,
 		DOB					DATE			not null,
-		SSN					varchar(15)		not null,
-		StartDate			DATE			not null
-	 Primary Key (ManagerID)
+		SSN					varchar(20)		not null,
+		StartDate			DATE			not null,
+	 Primary Key (ManagerID),
+	 UNIQUE (SSN)
 	 );
-create table BINS
-	(	BinName				varchar(30)		not null,
-		primary key (BinName)
+create table LOCATIONS
+	(	LocationName		varchar(30)		not null,
+		primary key (LocationName)
 	);
 	 
 create table dbo.PRODUCTS
-	(	UPC				bigint			not null,
+	(	UPC				char(11)		not null,
 		Description		varchar(50)		not null,
 		PSize			varchar(10),
 		MakerID			int				not null,				
 		Price			decimal(6,2)	not null,
-		Shelf			varchar(15)		not null,
+		MinOrderCount		int				not null,
 		primary key (UPC),
-		foreign key (MakerID) references MAKER (MakerID)
+		foreign key (MakerID) references MAKERS (MakerID)
   );
   
   
 create table dbo.ORDERS
-	(	OrderID			int				not null,
-		OrderTime		varchar(30)		not null,
+	(	OrderID			varchar(10)		not null,
+		OrderTime		time 			not null,
 		MemberID		varchar(5)		not null,
 	primary key (OrderID)
 	);
 	
 	
 create table dbo.TAGGED_PRODUCTS
-	(	UPC				bigint			not null,
+	(	UPC				char(11)			not null,
 		TagName			varchar(30)		not null,
 		primary key (UPC, TagName),
 		foreign key (UPC) references PRODUCTS (UPC),
@@ -79,7 +84,7 @@ create table dbo.TAGGED_PRODUCTS
 	
 	
 create table CERT_PRODUCTS
-	(	UPC					bigint			not null,
+	(	UPC					char(11)			not null,
 		CertName			varchar(30)		not null,
 		primary key (UPC, CertName),
 		foreign key (UPC) references PRODUCTS (UPC),
@@ -88,11 +93,8 @@ create table CERT_PRODUCTS
 
 create table dbo.DIST_PRODUCTS
 	(	DistID				int				not null,
-		UPC					bigint			not null,
-		WHCost				decimal(6,2)	not null,
-		MinOrderCount		int				not null,
-		Outfront			int,
-		Inback				int,		
+		UPC					char(11)			not null,
+		WHCost				decimal(6,2)	not null,	
 	Primary key (DistID, UPC),
 	foreign key (DistID) references DISTRIBUTORS (DistID),
 	foreign key (UPC) references PRODUCTS (UPC),
@@ -110,19 +112,24 @@ create table dbo.EMPLOYEES
 		StartDate			DATE			not null,
 		ManagerID			int				not null,
 	 Primary Key(EmpID),
-	 Foreign key (ManagerID) references MANAGERS (ManagerID)
+	 Foreign key (ManagerID) references MANAGERS (ManagerID),
+	 unique (SSN)
 	 );
-create table BIN_PRODUCTS
-	(	UPC					bigint			not null,
-		BINName				varchar(30)		not null,
-		primary key (UPC, BINName),
+create table LOCATION_PRODUCTS
+	(	UPC					char(11)			not null,
+		LocationName		varchar(30)		not null,
+		BIN					varchar(30),
+		Shelf				varchar(30),
+		OutFront			int,
+		InBack				int,
+		primary key (UPC, LocationName),
 		foreign key (UPC) references PRODUCTS (UPC),
-		foreign key (BINName) references BINS (BINName)
+		foreign key (LocationName) references LOCATIONS (LocationName)
 	);
 	
 create table dbo.COUPONS
 	(	CouponID		varchar(10)		not null,
-		UPC				bigint			not null,
+		UPC				char(11)			not null,
 		AmountSaved		decimal(6,2)	not null,
 	primary key (CouponID),
 	foreign key (UPC) references PRODUCTS (UPC)
@@ -138,8 +145,8 @@ create table dbo.COUPONS_USED
 
 	
 create table dbo.ORDERED_PRODUCTS
-	(	OrderID			int				not null,
-		UPC				bigint				not null,
+	(	OrderID			varchar(10)		not null,
+		UPC				char(11)		not null,
 		Quantity		int				not null,
 	primary key (OrderID, UPC),
 	foreign key (OrderID) references ORDERS (OrderID),
@@ -149,7 +156,7 @@ create table dbo.ORDERED_PRODUCTS
 
 create table dbo.IN_PERSON
 	(	EmpID			int				not null,
-		OrderID 		int				not null,
+		OrderID 		varchar(10)			not null,
 	primary key (EmpID, OrderID),
 	foreign key (EmpID) references EMPLOYEES (EmpID),
 	foreign key (OrderID) references ORDERS (OrderID)
