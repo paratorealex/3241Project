@@ -12,14 +12,14 @@ create table dbo.CERTIFICATIONS
 	);
 	
 create table dbo.DISTRIBUTORS
-	(	DistID				int				not null,
+	(	DistID				varchar(10)		not null,
 		Name				varchar(30)		not null,
 		Phone				varchar(30)		not null,
 		Address				varchar(50)		not null
 		primary key (DistID)
 	);	
 create table dbo.MAKERS
-	(	MakerID				int				not null,
+	(	MakerID				varchar(10)		not null,
 		Name				varchar(30)		not null,
 		Phone				varchar(30)		not null,
 		BrandName			varchar(30)
@@ -28,7 +28,7 @@ create table dbo.MAKERS
 	);	
 	
 create table dbo.CUSTOMERS
-	 (	MemberID		int				not null,
+	 (	MemberID		varchar(10)		not null,
 		Fname			varchar(15)		not null,
 		Lname			varchar(15)		not null,
 		Email			varchar(30),
@@ -38,7 +38,7 @@ create table dbo.CUSTOMERS
 	  );
 	  
 create table dbo.MANAGERS
-	(	ManagerID			int				not null,
+	(	ManagerID			varchar(10)		not null,
 		FName				varchar(15)		not null,
 		Lname				varchar(15)		not null,
 		Email				varchar(30)		not null,
@@ -58,9 +58,9 @@ create table dbo.PRODUCTS
 	(	UPC				char(11)		not null,
 		Description		varchar(50)		not null,
 		PSize			varchar(10),
-		MakerID			int				not null,				
+		MakerID			varchar(10)		not null,				
 		Price			decimal(6,2)	not null,
-		MinOrderCount		int				not null,
+		MinOrderCount		int			not null,
 		primary key (UPC),
 		foreign key (MakerID) references MAKERS (MakerID)
   );
@@ -92,7 +92,7 @@ create table CERT_PRODUCTS
 	);
 
 create table dbo.DIST_PRODUCTS
-	(	DistID				int				not null,
+	(	DistID				varchar(10)		not null,
 		UPC					char(11)			not null,
 		WHCost				decimal(6,2)	not null,	
 	Primary key (DistID, UPC),
@@ -102,7 +102,7 @@ create table dbo.DIST_PRODUCTS
 	
 	
 create table dbo.EMPLOYEES
-	(	EmpID				int				not null,
+	(	EmpID				varchar(10)		not null,
 		FName				varchar(15)		not null,
 		Lname				varchar(15)		not null,
 		Email				varchar(30)		not null,
@@ -110,7 +110,7 @@ create table dbo.EMPLOYEES
 		DOB					DATE			not null,
 		SSN					varchar(15)		not null,
 		StartDate			DATE			not null,
-		ManagerID			int				not null,
+		ManagerID			varchar(10)		not null,
 	 Primary Key(EmpID),
 	 Foreign key (ManagerID) references MANAGERS (ManagerID),
 	 unique (SSN)
@@ -129,21 +129,20 @@ create table LOCATION_PRODUCTS
 	
 create table dbo.COUPONS
 	(	CouponID		varchar(10)		not null,
-		UPC				char(11)			not null,
 		AmountSaved		decimal(6,2)	not null,
-	primary key (CouponID),
-	foreign key (UPC) references PRODUCTS (UPC)
+	primary key (CouponID)
 	);	
 	
 create table dbo.COUPONS_USED
 	(	CouponID		varchar(10)		not null,
-		MemberID		int				not null,
-	primary key (CouponID, MemberID),
+	 	UPC 			char(11)		not null,
+		OrderID			varchar(10)		not null,
+	primary key (CouponID, UPC, OrderID),
 	foreign key (CouponID) references COUPONS (CouponID),
-	foreign key (MemberID) references CUSTOMERS (MemberID)
+	foreign key (UPC) references PRODUCTS (UPC),
+	foreign key (OrderID) references ORDERS (OrderID)
 	);	
 
-	
 create table dbo.ORDERED_PRODUCTS
 	(	OrderID			varchar(10)		not null,
 		UPC				char(11)		not null,
@@ -155,7 +154,7 @@ create table dbo.ORDERED_PRODUCTS
 
 
 create table dbo.IN_PERSON
-	(	EmpID			int				not null,
+	(	EmpID			varchar(10)			not null,
 		OrderID 		varchar(10)			not null,
 	primary key (EmpID, OrderID),
 	foreign key (EmpID) references EMPLOYEES (EmpID),
