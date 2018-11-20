@@ -54,7 +54,10 @@ INSERT INTO PRODUCTS
 VALUES('74570014002', 'Chocolate', 'pint', '1', 5.49, 8)
 
 insert into ORDERS
-values ('38374', '01:13:33', '1');
+values ('38374', '01:13:33','cash', '1');
+
+insert into BRAND_MAKERS
+values ('Nestle', 'Haagen-Dazs')
 
 INSERT INTO TAGGED_PRODUCTS
 VALUES('74570014002','Frozen')
@@ -72,17 +75,13 @@ insert into LOCATION_PRODUCTS
 values ('74570014002','CheckoutCooler','left','top',4,null)
 
 insert into COUPONS
-values ('2749274638', 2.50);
-
-insert into COUPONS_USED
-values ('2749274638', '74570014002','38374');
+values ('2749274638', 1);
 
 insert into ORDERED_PRODUCTS
-values ('38374','74570014002', 2)
+values ('38374','74570014002', 2, '2749274638')
 
 insert into IN_PERSON
 values ('1','38374') 
-
 
     
  
