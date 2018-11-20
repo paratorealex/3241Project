@@ -12,7 +12,7 @@ SELECT	UPC, Certified
 		WHERE	(Certified = “Kosher”) OR (Certified = “Halal”);
 
 SELECT	Tag
-FROM		dbo.PRODUCT
+FROM		dbo.PRODUCTl
 WHERE	Tag = “Made by hand”
 
 
