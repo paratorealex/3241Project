@@ -21,7 +21,10 @@ values ('Frozen'),
 ('Organic');
 
 insert into BRANDS
-values ('Haagen-Dazs')
+values ('Haagen-Dazs'), ('Starbucks'), ('Frito-Lay'), ('Oreo'), ('Beyond Meat'), ('Gardein'), 
+('Boca Burger'), ('Nestle'), ('Kraft Foods'), ('Koshi'), ('Honest Tea'), ('Italiano'), 
+('Wonder Bread'), ('Kellogg's'), ('Hillshire Farms'), ('Oscar Meyer'), ('Boar's Head'), ('Tyson'), 
+('Jeni's'), ('Monster'), ('RedBull');
 
 
 insert into CERTIFICATIONS
@@ -113,7 +116,12 @@ insert into ORDERED_PRODUCTS
 values ('38374','74570014002', 2, '2749274638')
 
 insert into IN_PERSON
-values ('1','38374') 
+values ('1','38371'), ('2','38372'), ('3','38373'), ('4','38374'),  
+('5','38375'), ('6','38376'), ('7','38377'), ('8','38378'), ('9','38379'), 
+('10','38380'), ('11','38381'), ('12','38382'), ('13','38383'), ('14','38384'), 
+('15','38385'), ('16','38386'), ('17','38387'), ('18','38388'), ('19','38389'), 
+('20','38390');
+
 
     
  
