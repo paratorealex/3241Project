@@ -183,7 +183,28 @@ values ('Nestle', 'Haagen-Dazs'),
   ('Nabisco', Belvita);
 
 INSERT INTO TAGGED_PRODUCTS
-VALUES('74570014002','Frozen')
+VALUES('74570014002','Frozen'),
+  ('74570014003', 'Frozen'),
+  ('74570014002','Vegatrian'),
+  ('74570014003','Frozen'),
+  ('63726384982', 'Meat'),
+  ('63726384982', 'Gluten Free'),
+  ('63726384982', 'Beef),
+  ('63726384983', 'Meat'),
+  ('63726384983', 'Gluten Free'),
+  ('63726384983', 'Pork'),
+  ('63726384984', 'Meat'),
+  ('63726384984', 'Gluten Free'),
+  ('63726384984', 'Lamb'),
+  ('74570014002','Dessert'),
+  ('74570014003','Dessert'),
+  ('47589374859', 'Fruit'),
+  ('47589374859', 'Vegatrian'),
+  ('47589374859', 'Gluten Free'),
+  ('47589374859', 'Produce'),
+  ('47589374851', 'Fruit'),
+  ('47589374851', 'Vegatrian');
+  
 
 INSERT INTO CERT_PRODUCTS
 VALUES('74570014002','Vegetarian')
