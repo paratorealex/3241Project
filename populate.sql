@@ -22,6 +22,27 @@ values ('Frozen'),
 
 insert into BRANDS
 values ('Haagen-Dazs')
+('Coco-Cola'),
+('Pepsi'),
+('Chef Boyardee'),
+('Green Giant'),
+('Hunt's'),
+('Wonder Bread'),
+ ('Nature's Own'),
+ ('Keebler Company'),
+ ('Famous Amos'),
+ ('Gerber'),
+ ('Betty Croker'),
+ ('Baskin Robbins'),
+ ('Krispy Kream'),
+ ('Chips Ahoy!'),
+ ('Kinder'),
+ ('Oreo'),
+ ('Ritz'),
+ ('Triscuit'),
+ ('Nesquik'),
+ ('Killer Shake');
+ 
 
 
 insert into CERTIFICATIONS
