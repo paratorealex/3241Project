@@ -308,7 +308,28 @@ VALUES ('1','Nick','Brown','nickbrown@email.com','211-119-1111','1988-02-01','22
 ('20','Cat','Dog','catdog@email.com','211-119-1130','1988-12-11','222-23-2239','2011-01-05', '1')
 
 insert into LOCATION_PRODUCTS
-values ('74570014002','CheckoutCooler','left','top',4,null)
+values ('74570014002','CheckoutCooler1','left','top',4,null),
+('74570014002','Freezer1','left','top',3, null),
+('74570014002','CheckoutCooler2','left','top',4,null),
+('74570014002','CheckoutCooler3','left','top',4,null),
+('74570014003','CheckoutCooler1','right','top',3,null),
+('74570014003','CheckoutCooler2','right','top',3,null),
+('74570014003','CheckoutCooler3','right','top',3,null),
+('74570014003','Freezer1','right','top',3,null),
+('63726384982','Fridge1','middle','bottem',2,1),
+('63726384983','Fridge1','top','bottem',4,1),
+('63726384984','Fridge1','middle','bottem',3,2),
+('47589374851','FreshProduceBin1','left','bottem',5,15),
+('47589374859','FreshProduceBin1','middle','bottem',5,15),
+('47589374851','FreshProduceBin1','right','bottem',5,15),
+('37468579098','FreshProduceBin2','left','bottem',4,10),
+('57483757649', 'Asile1', 'right', 'top', 2, 3),
+('57483757649', 'CheckoutShelf1', 'right', 'top', 2, 3),
+('57483757649', 'CheckoutShelf2', 'right', 'top', 2, 3),
+('57483757649', 'CheckoutShelf3', 'right', 'top', 2, 3),
+('57463859602', 'Asile1', 'left', 'top', 4, 4),
+('56749906857', 'Asile1', 'middle', 'top', 3, 0);
+
 insert into COUPONS
 values ('2749274638', 1);
 insert into ORDERED_PRODUCTS
