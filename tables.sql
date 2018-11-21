@@ -7,7 +7,7 @@ create table dbo.TAGS
 		primary key (BrandName)
 	);
 create table dbo.CERTIFICATIONS
-	(	CertName		varchar(30)		not null,
+	(	CertName		varchar(50)		not null,
 		primary key (CertName)
 	);
 	
