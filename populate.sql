@@ -54,8 +54,26 @@ values ('1','A&B Distributors','1001001000','123 main street')
 
 
 insert into MAKERS
-VALUES ('1','Nestle','595-454-3059', 'Haagen-Dazs')
-
+VALUES ('1','Nestle','595-454-3059', 'Haagen-Dazs'),
+('2', 'Dean Foods', '746-985-9846','Killer Shakes'),
+('3','Dunkin' Brands' '984-987-4637','Baskin-Robbins'),
+ ('4', 'Washburn-Crosby Company', '983-986-3562', 'Betty Crocker'),
+ ('5', 'Flowers Foods', '746-984-0498', 'Wonder Bread'),
+ ('6', 'Nabisco', '983-678-0936', 'Chips Ahoy!'),
+ ('7', 'Wally Amos', '367-987-5647','Famous Amos'),
+ ('8', 'Ferro SpA', '974-984-9473', 'Kinder'),
+ ('9', 'Gilliam Candy Compnay', '984-098-4563', 'Kits'),
+ ('10', 'Mondelez International', '943-838-9403', 'Ritz'),
+ ('11', 'ConAgra Brands', '984-827-0927', 'Swiss Miss'),
+ ('12', 'Coca-Cola Company', '672-927-0947', 'Coca-Cola'),
+ ('13', 'Danone North America', '094-984-9394', 'Silk'),
+ ('14', 'Keebler Company', '783-097-9387', 'Cheez-It'),
+ ('15', 'British Bakeries', '387-093-9389', 'Mother's Pride'),
+ ('16', 'Krispy Kreme Doughnuts Inc,', '983-093-8938', 'Krispy Kreme'),
+ ('17', 'McVite's','987-377-3039', 'Mars Muffin'),
+  ('18', 'Cadbury', '377-947-0938', 'Cadbury Fingers'),
+  ('19', 'United Biscuits', '489-095-0395', 'Twiglets'),
+  ('20', 'Tasty Baking Company', '389-095-9304', 'Tastykake');
 
 INSERT INTO CUSTOMERS
 VALUES ('1','Joe', 'Smith', 'joesmith@email.com', '100-000-0000','4321323454349999'), 
