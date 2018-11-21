@@ -41,7 +41,15 @@ values ('Haagen-Dazs')
  ('Ritz'),
  ('Triscuit'),
  ('Nesquik'),
- ('Killer Shake');
+ ('Killer Shake'),
+ ('Swiss Miss'),
+ ('Cheez It'),
+ ('Mother's Pride'),
+  ('Mars Muffin')
+  ('Belvita'),
+  ('Teddy Grahams'),
+  ('Triscuits'),
+  ('Wheat Thins');
  
 
 
@@ -152,7 +160,27 @@ values ('38375', '05:13:33','cash', '1'), ('38374', '01:13:36','cash', '2'),
 
 
 insert into BRAND_MAKERS
-values ('Nestle', 'Haagen-Dazs')
+values ('Nestle', 'Haagen-Dazs'),
+('Nestle', 'Gerber'),
+('Keebler Company', 'Cheez It'),
+('Keebler Company', 'Famous Amos'),
+('Gilliam Candy Company', 'Kits'),
+('Unites Biscuits', 'McVite's'),
+ ('British Bakeries', 'Mother's Pride'),
+ ('Flowers Foods', 'Nature's Own'),
+  ('Tasty Baking Company', 'Tastykake'),
+  ('Flowers Foods', 'Wonder Bread'),
+  ('Dunkin Brands', 'Baskin Robbins'),
+  ('Washburn-Crosby Company', 'Betty Crocker'),
+  ('Krispy Kreme Doughnuts, Inc', 'Krispy Kreme'),
+  ('McVitie's', 'Mars Muffin'),
+  ('Nabisco', 'Chips Ahoy!'),
+  ('Nabisco', 'Oreo'),
+  ('Nabisco', 'Ritz'),
+  ('Nabisco', 'Wheat Thins'),
+  ('Nabisco', 'Teddy Grahams'),
+  ('Nabisco', 'Triscuits'),
+  ('Nabisco', Belvita);
 
 INSERT INTO TAGGED_PRODUCTS
 VALUES('74570014002','Frozen')
