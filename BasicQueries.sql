@@ -8,9 +8,13 @@
   ON dbo.BRAND_MAKERS.BrandName = dbo.BRANDS.BrandName
   WHERE(Price < 5.00) AND (dbo.BRANDS.BrandName = 'Local');
 
-SELECT	Cost, DistributorName
-	FROM		dbo.PRODUCT
-	WHERE	UPC = “reorderproduct”;
+  SELECT dbo.PRODUCTS.UPC, dbo.DISTRIBUTORS.Name, dbo.DIST_PRODUCTS.WHCost
+  FROM dbo.PRODUCTS 
+  JOIN dbo.DIST_PRODUCTS
+  ON dbo.PRODUCTS.UPC = dbo.DIST_PRODUCTS.UPC
+  JOIN dbo.DISTRIBUTORS
+  ON dbo.DIST_PRODUCTS.DistID = dbo.DISTRIBUTORS.DistID
+  WHERE dbo.PRODUCTS.UPC = 74574014005;
 
 SELECT	UPC, Certified
 		FROM		dbo.PRODUCT
