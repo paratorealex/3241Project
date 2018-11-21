@@ -137,7 +137,28 @@ VALUES ('1','John','Deer','johnd@email.com','211-111-1111','1990-01-01','122-23-
 ('20','Jack','Friday','jackf@email.com','211-111-1911','1992-01-01','288-23-2222','2012-01-01')
 
 insert into LOCATIONS
-values ('CheckoutCooler')
+values ('CheckoutCooler1'),
+('CheckoutCooler2'),
+('CheckoutCooler3'),
+('Freezer1'),
+('Freezer2'),
+('Freezer3'),
+('Fridge1'),
+('Fridge2'),
+('Fridge3'),
+('Aisle1'),
+('Asile2'),
+('Asile3'),
+('Asile4'),
+('Asile5'),
+('Asile6'),
+('Asile7'),
+('CheckoutShelf1'),
+('CheckoutShelf2'),
+('CheckoutShelf3'),
+('FreshProduceBin1'),
+('FreshProduceBin2');
+
 
 INSERT INTO PRODUCTS
 VALUES ('74570014002', 'Chocolate', 'pint', 'Nestle', 5.49, 8), ('74570014003', 'Vanilla', 'pint', 'Nestle', 5.49, 9)
