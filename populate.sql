@@ -145,9 +145,20 @@ VALUES ('74570014002', 'Chocolate', 'pint', 'Nestle', 5.49, 8), ('74570014003', 
  ('63726384983', 'Pork Chops','6 oz','Smiths's farm', 5.59, 5),
  ('63726384984', 'Lamb Chops','8 oz','Smiths's farm', 6.69, 4),
 ('47589374851', 'Orange','2 oz','Smiths's farm', 1.90, 20),
-('47589374859', 'Apple','2 oz','Smiths's farm', 1.30, 20),
- ('37468579098', 'Carrot','5 oz','Smiths's farm', 2.22, 20),
+('47589374859', 'Apple','2 oz','Smiths's farm', 1.30, 19),
+ ('37468579098', 'Carrot','5 oz','Smiths's farm', 2.22, 14),
 ('36289367281', 'Tuna','5 oz','Organic Tuna', 1.69, 10),
+('57483757649', 'Oreo', '20 oz', 'Nabisco', 3.99, 5),
+('57463859602', 'Ritz', '20 oz', 'Nabisco', 2.99, 8),
+('56749906857', 'Wheat Thins', '15 oz', 'Nabisco', 2.99, 3),
+('56749906858', 'Belvita', '10 oz', 'Nabisco', 4.99, 5),
+('56749906859', 'Teddy Grahams', '15 oz', 'Nabisco', 2.99, 6),
+('56749906851', 'Triscuits', '20 oz', 'Nabisco', 2.99, 3),
+('67593759504', 'Carrot Baby Food', '5 oz', 'Nestle', 2.99, 4),
+('67593759505', 'Peas Baby Food', '5 oz', 'Nestle', 2.99, 9),
+('67593759506', 'Yams Baby Food', '5 oz', 'Nestle', 2.99, 2),
+('67593759507', 'Squash Baby Food', '5 oz', 'Nestle', 2.99, 4),
+('67593759508', 'Apple Baby Food', '5 oz', 'Nestle', 2.99, 7)
 
 
 
