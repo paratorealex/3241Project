@@ -53,7 +53,16 @@ values ('Vegetarian'), ('Vegan'), ('American Grass Fed'), ('Animal Welfare Appro
 
 
 insert into DISTRIBUTORS
-values ('1','A&B Distributors','1001001000','123 main street')
+values ('1','A&B Distributors','1001001000','1 main street'), ('2','A&B Distributors','1001001000','123 purple street'),
+('3','Red Distributors','1001001001','2 smith street'), ('10','K Distributors','1001001010','200 pink street'),
+('4','C Distributors','1001001002','3 blue street'), ('11','L Distributors','1001001500','450 cool street'),
+('5','D Distributors','1001001003','4 red street'), ('12','M Distributors','1001006000','479 main street'),
+('6','E Distributors','1001001004','5 green street'), ('13','N Distributors','1001001800','970 high street'),
+('7','F Distributors','1001001005','6 south street'), ('14','O Distributors','1001001700','11 high street'),
+('8','G Distributors','1001001006','17 main street'), ('15','P Distributors','1001071000','34 13th street'),
+('9','H Distributors','1001001007','453 yellow street'), ('16','Q Distributors','1001041000','54 14th street'),
+('19','I Distributors','1001001080','345 sunny street'), ('17','R Distributors','1202001000','65 15th street'), 
+('20','J Distributors','1001001009','1220 orange street'), ('18','S Distributors','1501501000','1302 16th street'),
 
 
 insert into MAKERS
