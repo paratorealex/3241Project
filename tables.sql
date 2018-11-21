@@ -2,7 +2,7 @@ create table dbo.TAGS
 	(	TagName 		varchar(30) 	not	null,
 		primary key (TagName)
 	);
-create table dbo.BRANDS
+	create table dbo.BRANDS
 	(	BrandName		varchar(30)		not null,
 		primary key (BrandName)
 	);
@@ -22,7 +22,7 @@ create table dbo.MAKERS
 	(	MakerName			varchar(30)		not null,
 		Phone				varchar(30)		not null,
 		Address				varchar(50)		not null,
-		Primary key (MakerID)
+		Primary key (MakerName)
 	);	
 	
 create table dbo.CUSTOMERS
@@ -60,7 +60,7 @@ create table dbo.PRODUCTS
 		Price			decimal(6,2)	not null,
 		MinOrderCount		int			not null,
 		primary key (UPC),
-		foreign key (MakerID) references MAKERS (MakerID)
+		foreign key (MakerName) references MAKERS (MakerName)
   );
   
   
@@ -74,7 +74,7 @@ create table dbo.ORDERS
 create table BRAND_MAKERS
 	(	MakerName		varchar(30)		not null,
 		BrandName		varchar(30)		not null,
-		primary key (MakerName, BrandID)
+		primary key (MakerName, BrandName)
 	);
 	
 create table dbo.TAGGED_PRODUCTS
@@ -82,7 +82,7 @@ create table dbo.TAGGED_PRODUCTS
 		TagName			varchar(30)		not null,
 		primary key (UPC, TagName),
 		foreign key (UPC) references PRODUCTS (UPC),
-		foreign key (TagName) references Tags (TagName)
+		foreign key (TagName) references TAGS (TagName)
 	);
 	
 	
@@ -113,7 +113,7 @@ create table dbo.EMPLOYEES
 		DOB					DATE			not null,
 		SSN					varchar(15)		not null,
 		StartDate			DATE			not null,
-		ManagerID			int				not null,
+		ManagerID			varchar(10)		not null,
 	 Primary Key(EmpID),
 	 Foreign key (ManagerID) references MANAGERS (ManagerID),
 	 unique (SSN)
