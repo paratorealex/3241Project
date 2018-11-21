@@ -46,7 +46,10 @@ values ('Haagen-Dazs')
 
 
 insert into CERTIFICATIONS
-values ('Vegetarian')
+values ('Vegetarian'), ('Vegan'), ('American Grass Fed'), ('Animal Welfare Approved'), ('USDA Organic'), 
+('Food Alliance Certified'), ('Salmon Safe'), ('Soil Association Certified Organic'), ('Marine Stewardship Council'), 
+('Rain Forest Alliance Certified'), ('U.S. Department of Commerce Dolphin Safe'), ('Fair Trade Certified'), 
+('Bird Friendly'), ('Fair Trade Federation'), ('Free Range'), 
 
 
 insert into DISTRIBUTORS
@@ -104,10 +107,21 @@ insert into LOCATIONS
 values ('CheckoutCooler')
 
 INSERT INTO PRODUCTS
-VALUES('74570014002', 'Chocolate', 'pint', '1', 5.49, 8)
+VALUES ('74570014002', 'Chocolate', 'pint', 'Haagen-Daaz', 5.49, 8), ('74570014003', 'Vanilla', 'pint', 'Haagen-Daaz', 5.49, 9), 
+
 
 insert into ORDERS
-values ('38374', '01:13:33','cash', '1');
+values ('38375', '05:13:33','cash', '1'), ('38374', '01:13:36','cash', '2'),
+('38355', '03:25:34','card', '3'), ('38366', '02:03:57','cash', '4'), 
+('38344', '04:16:34','card', '6'), ('38378', '05:17:43','cash', '5'), 
+('38333', '06:15:39','card', '7'), ('38387', '05:15:53','cash', '8'),
+('38323', '02:13:33','cash', '12'), ('38374', '04:53:63','card', '9'),
+('38343', '08:13:33','cash', '13'), ('38374', '04:43:43','card', '10'),
+('38365', '07:13:55','card', '14'), ('38374', '07:23:36','cash', '11'),
+('38377', '04:53:56','card', '15'), ('38374', '01:13:33','cash', '18'), 
+('38371', '01:43:33','cash', '16'), ('38374', '01:13:33','cash', '19'), 
+('38321', '07:23:59','cash', '17'), ('38374', '01:13:33','cash', '20');
+
 
 insert into BRAND_MAKERS
 values ('Nestle', 'Haagen-Dazs')
