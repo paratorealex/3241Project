@@ -1,7 +1,12 @@
-
-SELECT	UPC, Description
-FROM		dbo.PRODUCT
-WHERE	(Brand = "Local") AND (Cost < 5);
+  SELECT [Description]
+  FROM [dbo].[PRODUCTS]
+  JOIN dbo.MAKERS
+  ON dbo.MAKERS.MakerName = dbo.PRODUCTS.MakerName
+  JOIN dbo.BRAND_MAKERS
+  ON dbo.BRAND_MAKERS.MakerName = dbo.PRODUCTS.MakerName
+  JOIN dbo.BRANDS
+  ON dbo.BRAND_MAKERS.BrandName = dbo.BRANDS.BrandName
+  WHERE(Price < 5.00) AND (dbo.BRANDS.BrandName = 'Local');
 
 SELECT	Cost, DistributorName
 	FROM		dbo.PRODUCT
