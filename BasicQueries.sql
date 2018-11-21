@@ -16,9 +16,11 @@
   ON dbo.DIST_PRODUCTS.DistID = dbo.DISTRIBUTORS.DistID
   WHERE dbo.PRODUCTS.UPC = 74574014005;
 
-SELECT	UPC, Certified
-		FROM		dbo.PRODUCT
-		WHERE	(Certified = “Kosher”) OR (Certified = “Halal”);
+  SELECT dbo.PRODUCTS.UPC, dbo.PRODUCTS.Description, dbo.CERT_PRODUCTS.CertName
+  FROM dbo.PRODUCTS
+  JOIN dbo.CERT_PRODUCTS
+  ON dbo.PRODUCTS.UPC = dbo.CERT_PRODUCTS.UPC
+  WHERE dbo.CERT_PRODUCTS.CertName = 'Halal' OR dbo.CERT_PRODUCTS.CertName = 'Kosher';
 
 SELECT	Tag
 FROM		dbo.PRODUCTl
