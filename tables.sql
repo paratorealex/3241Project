@@ -7,7 +7,7 @@ create table dbo.TAGS
 		primary key (BrandName)
 	);
 create table dbo.CERTIFICATIONS
-	(	CertName		varchar(30)		not null,
+	(	CertName		varchar(50)		not null,
 		primary key (CertName)
 	);
 	
@@ -67,6 +67,7 @@ create table dbo.PRODUCTS
 create table dbo.ORDERS
 	(	OrderID			varchar(10)		not null,
 		OrderTime		time 			not null,
+	 	PaymentType		varchar(10)		not null,
 		MemberID		varchar(5)		not null,
 	primary key (OrderID)
 	);
@@ -88,7 +89,7 @@ create table dbo.TAGGED_PRODUCTS
 	
 create table CERT_PRODUCTS
 	(	UPC					char(11)			not null,
-		CertName			varchar(30)		not null,
+		CertName			varchar(50)		not null,
 		primary key (UPC, CertName),
 		foreign key (UPC) references PRODUCTS (UPC),
 		foreign key (CertName) references CERTIFICATIONS (CertName)
