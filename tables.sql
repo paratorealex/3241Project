@@ -67,6 +67,7 @@ create table dbo.PRODUCTS
 create table dbo.ORDERS
 	(	OrderID			varchar(10)		not null,
 		OrderTime		time 			not null,
+	 	PaymentType		varchar(10)		not null,
 		MemberID		varchar(5)		not null,
 	primary key (OrderID)
 	);
