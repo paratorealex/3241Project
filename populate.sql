@@ -21,14 +21,14 @@ values ('Frozen'),
 ('Organic');
 
 insert into BRANDS
-values ('Haagen-Dazs')
+values ('Haagen-Dazs'),
 ('Coco-Cola'),
 ('Pepsi'),
 ('Chef Boyardee'),
 ('Green Giant'),
-('Hunt's'),
+('Hunt''s'),
 ('Wonder Bread'),
- ('Nature's Own'),
+ ('Nature''s Own'),
  ('Keebler Company'),
  ('Famous Amos'),
  ('Gerber'),
@@ -44,22 +44,18 @@ values ('Haagen-Dazs')
  ('Killer Shake'),
  ('Swiss Miss'),
  ('Cheez It'),
- ('Mother's Pride'),
-  ('Mars Muffin')
+ ('Mother''s Pride'),
+  ('Mars Muffin'),
   ('Belvita'),
   ('Teddy Grahams'),
   ('Triscuits'),
   ('Wheat Thins');
  
-
-
 insert into CERTIFICATIONS
 values ('Vegetarian'), ('Vegan'), ('American Grass Fed'), ('Animal Welfare Approved'), ('USDA Organic'), 
 ('Food Alliance Certified'), ('Salmon Safe'), ('Soil Association Certified Organic'), ('Marine Stewardship Council'), 
 ('Rain Forest Alliance Certified'), ('U.S. Department of Commerce Dolphin Safe'), ('Fair Trade Certified'), 
-('Bird Friendly'), ('Fair Trade Federation'), ('Free Range'), 
-
-
+('Bird Friendly'), ('Fair Trade Federation'), ('Free Range')
 insert into DISTRIBUTORS
 values ('1','A&B Distributors','1001001000','1 main street'), ('2','A&B Distributors','1001001000','123 purple street'),
 ('3','Red Distributors','1001001001','2 smith street'), ('10','K Distributors','1001001010','200 pink street'),
@@ -70,30 +66,28 @@ values ('1','A&B Distributors','1001001000','1 main street'), ('2','A&B Distribu
 ('8','G Distributors','1001001006','17 main street'), ('15','P Distributors','1001071000','34 13th street'),
 ('9','H Distributors','1001001007','453 yellow street'), ('16','Q Distributors','1001041000','54 14th street'),
 ('19','I Distributors','1001001080','345 sunny street'), ('17','R Distributors','1202001000','65 15th street'), 
-('20','J Distributors','1001001009','1220 orange street'), ('18','S Distributors','1501501000','1302 16th street'),
-
-
+('20','J Distributors','1001001009','1220 orange street'), ('18','S Distributors','1501501000','1302 16th street')
 insert into MAKERS
-VALUES ('1','Nestle','595-454-3059', 'Haagen-Dazs'),
-('2', 'Dean Foods', '746-985-9846','Killer Shakes'),
-('3','Dunkin' Brands' '984-987-4637','Baskin-Robbins'),
- ('4', 'Washburn-Crosby Company', '983-986-3562', 'Betty Crocker'),
- ('5', 'Flowers Foods', '746-984-0498', 'Wonder Bread'),
- ('6', 'Nabisco', '983-678-0936', 'Chips Ahoy!'),
- ('7', 'Wally Amos', '367-987-5647','Famous Amos'),
- ('8', 'Ferro SpA', '974-984-9473', 'Kinder'),
- ('9', 'Gilliam Candy Compnay', '984-098-4563', 'Kits'),
- ('10', 'Mondelez International', '943-838-9403', 'Ritz'),
- ('11', 'ConAgra Brands', '984-827-0927', 'Swiss Miss'),
- ('12', 'Coca-Cola Company', '672-927-0947', 'Coca-Cola'),
- ('13', 'Danone North America', '094-984-9394', 'Silk'),
- ('14', 'Keebler Company', '783-097-9387', 'Cheez-It'),
- ('15', 'British Bakeries', '387-093-9389', 'Mother's Pride'),
- ('16', 'Krispy Kreme Doughnuts Inc,', '983-093-8938', 'Krispy Kreme'),
- ('17', 'McVite's','987-377-3039', 'Mars Muffin'),
-  ('18', 'Cadbury', '377-947-0938', 'Cadbury Fingers'),
-  ('19', 'United Biscuits', '489-095-0395', 'Twiglets'),
-  ('20', 'Tasty Baking Company', '389-095-9304', 'Tastykake');
+VALUES ('Nestle','595-454-3059', '123 purple street'),
+ ('Dean Foods', '746-985-9846','970 high street'),
+ ('Dunkin'' Brands', '984-987-4637','54 14th street'),
+ ('Washburn-Crosby Company', '983-986-3562', '34 13th street'),
+ ('Flowers Foods', '746-984-0498', '34 16th street'),
+ ('Nabisco', '983-678-0936', '38 12th street'),
+ ( 'Wally Amos', '367-987-5647','39 19th street'),
+ ('Ferro SpA', '974-984-9473', '64 25th street'),
+ ('Gilliam Candy Compnay', '984-098-4563','25 5th street'),
+ ('Mondelez International', '943-838-9403', '55 55th street'),
+ ('ConAgra Brands', '984-827-0927', '100 15th street'),
+ ('Coca-Cola Company', '672-927-0947', '635 3rd street'),
+ ('Danone North America', '094-984-9394', '63 10th street'),
+ ('Keebler Company', '783-097-9387', '77 13th street'),
+ ('British Bakeries', '387-093-9389', '12 35th street'),
+ ('Krispy Kreme Doughnuts Inc,', '983-093-8938', '45 9th street'),
+ ('McVite''s','987-377-3039', '534 5th street'),
+  ('Cadbury', '377-947-0938', '644 23rd street'),
+  ('United Biscuits', '489-095-0395', '63 2nd street'),
+  ('Tasty Baking Company', '389-095-9304', '630 12th street');
 
 INSERT INTO CUSTOMERS
 VALUES ('1','Joe', 'Smith', 'joesmith@email.com', '100-000-0000','4321323454349999'), 
@@ -137,13 +131,13 @@ VALUES ('1','John','Deer','johnd@email.com','211-111-1111','1990-01-01','122-23-
 ('17','Mara','Sunny','marasunny@email.com','291-111-1111','1991-01-01','222-23-9222','2016-01-01'), 
 ('18','Lisa','Monday','lisam@email.com','211-111-8111','1990-01-01','222-23-2229','2011-01-01'), 
 ('19','Meg','Tuesday','megt@email.com','211-111-1811','1991-01-01','277-23-2222','2011-01-01'), 
-('20','Jack','Friday','jackf@email.com','211-111-1911','1992-01-01','288-23-2222','2012-01-01'), 
+('20','Jack','Friday','jackf@email.com','211-111-1911','1992-01-01','288-23-2222','2012-01-01')
 
 insert into LOCATIONS
 values ('CheckoutCooler')
 
 INSERT INTO PRODUCTS
-VALUES ('74570014002', 'Chocolate', 'pint', 'Haagen-Daaz', 5.49, 8), ('74570014003', 'Vanilla', 'pint', 'Haagen-Daaz', 5.49, 9), 
+VALUES ('74570014002', 'Chocolate', 'pint', 'Nestle', 5.49, 8), ('74570014003', 'Vanilla', 'pint', 'Nestle', 5.49, 9)
 
 
 insert into ORDERS
@@ -165,22 +159,22 @@ values ('Nestle', 'Haagen-Dazs'),
 ('Keebler Company', 'Cheez It'),
 ('Keebler Company', 'Famous Amos'),
 ('Gilliam Candy Company', 'Kits'),
-('Unites Biscuits', 'McVite's'),
- ('British Bakeries', 'Mother's Pride'),
- ('Flowers Foods', 'Nature's Own'),
+('Unites Biscuits', 'McVite''s'),
+ ('British Bakeries', 'Mother''s Pride'),
+ ('Flowers Foods', 'Nature''s Own'),
   ('Tasty Baking Company', 'Tastykake'),
   ('Flowers Foods', 'Wonder Bread'),
   ('Dunkin Brands', 'Baskin Robbins'),
   ('Washburn-Crosby Company', 'Betty Crocker'),
   ('Krispy Kreme Doughnuts, Inc', 'Krispy Kreme'),
-  ('McVitie's', 'Mars Muffin'),
+  ('McVitie''s', 'Mars Muffin'),
   ('Nabisco', 'Chips Ahoy!'),
   ('Nabisco', 'Oreo'),
   ('Nabisco', 'Ritz'),
   ('Nabisco', 'Wheat Thins'),
   ('Nabisco', 'Teddy Grahams'),
   ('Nabisco', 'Triscuits'),
-  ('Nabisco', Belvita);
+  ('Nabisco', 'Belvita');
 
 INSERT INTO TAGGED_PRODUCTS
 VALUES('74570014002','Frozen'),
@@ -189,7 +183,7 @@ VALUES('74570014002','Frozen'),
   ('74570014003','Frozen'),
   ('63726384982', 'Meat'),
   ('63726384982', 'Gluten Free'),
-  ('63726384982', 'Beef),
+  ('63726384982', 'Beef'),
   ('63726384983', 'Meat'),
   ('63726384983', 'Gluten Free'),
   ('63726384983', 'Pork'),
@@ -205,7 +199,6 @@ VALUES('74570014002','Frozen'),
   ('47589374851', 'Fruit'),
   ('47589374851', 'Vegatrian');
   
-
 INSERT INTO CERT_PRODUCTS
 VALUES('74570014002','Vegetarian')
 
@@ -230,6 +223,7 @@ VALUES('1','74570014002', 4.57),
 ('18', '57849567431',8.76),
 ('19', '46736289572',9.09),
 ('20','26736478917',8.99);
+
 INSERT INTO EMPLOYEES
 VALUES ('1','Nick','Brown','nickbrown@email.com','211-119-1111','1988-02-01','222-23-2220','2010-01-12', '1'), 
 ('2','John','Black','johnblack@email.com','211-119-1112','1990-04-01','222-23-2221','2012-02-08', '1'), 
@@ -250,19 +244,13 @@ VALUES ('1','Nick','Brown','nickbrown@email.com','211-119-1111','1988-02-01','22
 ('17','Patrick','Reed','patrickr@email.com','211-119-1127','1990-02-05','222-23-2236','2013-06-09', '8'), 
 ('18','Kyle','Wright','kylew@email.com','211-119-1128','1988-10-01','222-23-2237','2013-01-09', '2'), 
 ('19','Tyler','Smith','tylers@email.com','211-119-1129','1990-12-12','222-23-2238','2012-07-03', '4'), 
-('20','Cat','Dog','catdog@email.com','211-119-1130','1988-12-11','222-23-2239','2011-01-05', '1'), 
+('20','Cat','Dog','catdog@email.com','211-119-1130','1988-12-11','222-23-2239','2011-01-05', '1')
 
 insert into LOCATION_PRODUCTS
 values ('74570014002','CheckoutCooler','left','top',4,null)
-
 insert into COUPONS
 values ('2749274638', 1);
-
 insert into ORDERED_PRODUCTS
 values ('38374','74570014002', 2, '2749274638')
-
 insert into IN_PERSON
 values ('1','38374') 
-
-    
- 
