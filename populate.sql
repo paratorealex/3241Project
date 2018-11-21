@@ -7,10 +7,6 @@ values ('Frozen'),
 ('Made by hand'),
 ('Fruit'),
 ('Vegetable'),
-('Vegan'),
-('Vegatrian'),
-('GMO Free'),
-('Kosher'),
 ('Dairy'),
 ('Meat'),
 ('Gluten Free'),
@@ -18,7 +14,13 @@ values ('Frozen'),
 ('Pork'),
 ('Beef'),
 ('Lamb'),
-('Organic');
+('Dairy Free'),
+('Cheese'),
+('Milk'),
+('Eggs'),
+('Steak'),
+('Bacon');
+
 
 insert into BRANDS
 values ('Haagen-Dazs')
@@ -57,7 +59,7 @@ insert into CERTIFICATIONS
 values ('Vegetarian'), ('Vegan'), ('American Grass Fed'), ('Animal Welfare Approved'), ('USDA Organic'), 
 ('Food Alliance Certified'), ('Salmon Safe'), ('Soil Association Certified Organic'), ('Marine Stewardship Council'), 
 ('Rain Forest Alliance Certified'), ('U.S. Department of Commerce Dolphin Safe'), ('Fair Trade Certified'), 
-('Bird Friendly'), ('Fair Trade Federation'), ('Free Range'), 
+('Bird Friendly'), ('Fair Trade Federation'), ('Free Range'), ('Non-GMO'), ('Non-MSG'), ('Made in America'), ('Made in China'),('Halal');
 
 
 insert into DISTRIBUTORS
@@ -185,7 +187,8 @@ values ('Nestle', 'Haagen-Dazs'),
 INSERT INTO TAGGED_PRODUCTS
 VALUES('74570014002','Frozen'),
   ('74570014003', 'Frozen'),
-  ('74570014002','Vegatrian'),
+  ('27846574892', 'Powers'),
+  ('27846574892', 'Energy'),
   ('74570014003','Frozen'),
   ('63726384982', 'Meat'),
   ('63726384982', 'Gluten Free'),
@@ -199,15 +202,36 @@ VALUES('74570014002','Frozen'),
   ('74570014002','Dessert'),
   ('74570014003','Dessert'),
   ('47589374859', 'Fruit'),
-  ('47589374859', 'Vegatrian'),
   ('47589374859', 'Gluten Free'),
   ('47589374859', 'Produce'),
   ('47589374851', 'Fruit'),
-  ('47589374851', 'Vegatrian');
+   ('47589374851', 'Dairy Free');
+  
   
 
 INSERT INTO CERT_PRODUCTS
-VALUES('74570014002','Vegetarian')
+VALUES('74570014002','Vegetarian'),
+   ('47589374851', 'Vegatrian'),
+   ('47589374859', 'Vegatrian'),
+   ('74570014002','Vegatrian'),
+   ('47589374859', 'Non-GMO'),
+   ('47589374851', 'Non-GMO'),
+    ('27846574892', 'Fair Trade Certified'),
+   ('36289367281', 'U.S. Department of commerce Dolphin Safe'''),
+   ('47589374851', 'Vegan'),
+   ('47589374859', 'Vegan'),
+   ('63726384983', 'American Grass Fed'),
+   ('63726384983', 'USDA Organic'),
+   ('63726384984', 'American Grass Fed'),
+   ('63726384984', 'USDA Organic'),
+   ('63726384983', 'Animal Welfare Approved'),
+   ('63726384984', 'Animal Welfare Approved'),
+   ('63726384983', 'Food Alliane Certified'),
+   ('63726384984', 'Food Allience Certified'),
+   ('27846574892', 'Fair Trade Federation'),
+   ('37468579098','Vegan'),
+   ('37468579098','Vegetrian');
+   
 
 INSERT INTO DIST_PRODUCTS
 VALUES('1','74570014002', 4.57),
