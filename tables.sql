@@ -1,31 +1,31 @@
-create table dbo.TAGS
+create table TAGS
 	(	TagName 		varchar(30) 	not	null,
 		primary key (TagName)
 	);
-	create table dbo.BRANDS
+	create table BRANDS
 	(	BrandName		varchar(30)		not null,
 		primary key (BrandName)
 	);
-create table dbo.CERTIFICATIONS
+create table CERTIFICATIONS
 	(	CertName		varchar(50)		not null,
 		primary key (CertName)
 	);
 	
-create table dbo.DISTRIBUTORS
+create table DISTRIBUTORS
 	(	DistID				varchar(10)		not null,
 		Name				varchar(30)		not null,
 		Phone				varchar(30)		not null,
 		Address				varchar(50)		not null
 		primary key (DistID)
 	);	
-create table dbo.MAKERS
+create table MAKERS
 	(	MakerName			varchar(30)		not null,
 		Phone				varchar(30)		not null,
 		Address				varchar(50)		not null,
 		Primary key (MakerName)
 	);	
 	
-create table dbo.CUSTOMERS
+create table CUSTOMERS
 	 (	MemberID		varchar(10)		not null,
 		Fname			varchar(15)		not null,
 		Lname			varchar(15)		not null,
@@ -35,7 +35,7 @@ create table dbo.CUSTOMERS
 	primary key (MemberID),
 	  );
 	  
-create table dbo.MANAGERS
+create table MANAGERS
 	(	ManagerID			varchar(10)		not null,
 		FName				varchar(15)		not null,
 		Lname				varchar(15)		not null,
@@ -52,7 +52,7 @@ create table LOCATIONS
 		primary key (LocationName)
 	);
 	 
-create table dbo.PRODUCTS
+create table PRODUCTS
 	(	UPC				char(11)		not null,
 		Description		varchar(50)		not null,
 		PSize			varchar(10),
@@ -64,7 +64,7 @@ create table dbo.PRODUCTS
   );
   
   
-create table dbo.ORDERS
+create table ORDERS
 	(	OrderID			varchar(10)		not null,
 		OrderTime		time 			not null,
 	 	PaymentType		varchar(10)		not null,
@@ -78,7 +78,7 @@ create table BRAND_MAKERS
 		primary key (MakerName, BrandName)
 	);
 	
-create table dbo.TAGGED_PRODUCTS
+create table TAGGED_PRODUCTS
 	(	UPC				char(11)			not null,
 		TagName			varchar(30)		not null,
 		primary key (UPC, TagName),
@@ -95,7 +95,7 @@ create table CERT_PRODUCTS
 		foreign key (CertName) references CERTIFICATIONS (CertName)
 	);
 
-create table dbo.DIST_PRODUCTS
+create table DIST_PRODUCTS
 	(	DistID				varchar(10)		not null,
 		UPC					char(11)			not null,
 		WHCost				decimal(6,2)	not null,	
@@ -105,7 +105,7 @@ create table dbo.DIST_PRODUCTS
 	);
 	
 	
-create table dbo.EMPLOYEES
+create table EMPLOYEES
 	(	EmpID				varchar(10)		not null,
 		FName				varchar(15)		not null,
 		Lname				varchar(15)		not null,
@@ -131,14 +131,14 @@ create table LOCATION_PRODUCTS
 		foreign key (LocationName) references LOCATIONS (LocationName)
 	);
 	
-create table dbo.COUPONS
+create table COUPONS
 	(	CouponID		varchar(10)		not null,
 		AmountSaved		decimal(6,2)	not null,
 	primary key (CouponID)
 	);	
 	
 
-create table dbo.ORDERED_PRODUCTS
+create table ORDERED_PRODUCTS
 	(	OrderID			varchar(10)		not null,
 		UPC				char(11)		not null,
 		Quantity		int				not null,
@@ -150,7 +150,7 @@ create table dbo.ORDERED_PRODUCTS
 	);
 
 
-create table dbo.IN_PERSON
+create table IN_PERSON
 	(	EmpID			varchar(10)			not null,
 		OrderID 		varchar(10)			not null,
 	primary key (EmpID, OrderID),
