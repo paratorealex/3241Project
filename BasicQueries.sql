@@ -1,36 +1,159 @@
-  SELECT [Description]
-  FROM [dbo].[PRODUCTS]
-  JOIN dbo.MAKERS
-  ON dbo.MAKERS.MakerName = dbo.PRODUCTS.MakerName
-  JOIN dbo.BRAND_MAKERS
-  ON dbo.BRAND_MAKERS.MakerName = dbo.PRODUCTS.MakerName
-  JOIN dbo.BRANDS
-  ON dbo.BRAND_MAKERS.BrandName = dbo.BRANDS.BrandName
-  WHERE(Price < 5.00) AND (dbo.BRANDS.BrandName = 'Local');
+create table TAGS
+	(	TagName 		varchar(30) 	not	null,
+		primary key (TagName)
+	);
+	create table BRANDS
+	(	BrandName		varchar(30)		not null,
+		primary key (BrandName)
+	);
+create table CERTIFICATIONS
+	(	CertName		varchar(50)		not null,
+		primary key (CertName)
+	);
+	
+create table DISTRIBUTORS
+	(	DistID				varchar(10)		not null,
+		Name				varchar(30)		not null,
+		Phone				varchar(30)		not null,
+		Address				varchar(50)		not null
+		primary key (DistID)
+	);	
+create table MAKERS
+	(	MakerName			varchar(30)		not null,
+		Phone				varchar(30)		not null,
+		Address				varchar(50)		not null,
+		Primary key (MakerName)
+	);	
+	
+create table CUSTOMERS
+	 (	MemberID		varchar(10)		not null,
+		Fname			varchar(15)		not null,
+		Lname			varchar(15)		not null,
+		Email			varchar(30),
+		Phone			varchar(30)	,
+		CreditCardNum	varchar(30)	,			
+	primary key (MemberID),
+	  );
+	  
+create table MANAGERS
+	(	ManagerID			varchar(10)		not null,
+		FName				varchar(15)		not null,
+		Lname				varchar(15)		not null,
+		Email				varchar(30)		not null,
+		Phone				varchar(30)		not null,
+		DOB					DATE			not null,
+		SSN					varchar(20)		not null,
+		StartDate			DATE			not null,
+	 Primary Key (ManagerID),
+	 UNIQUE (SSN)
+	 );
+create table LOCATIONS
+	(	LocationName		varchar(30)		not null,
+		primary key (LocationName)
+	);
+	 
+create table PRODUCTS
+	(	UPC				char(11)		not null,
+		Description		varchar(50)		not null,
+		PSize			varchar(10),
+		MakerName		varchar(30)		not null,				
+		Price			decimal(6,2)	not null,
+		MinOrderCount		int			not null,
+		primary key (UPC),
+		foreign key (MakerName) references MAKERS (MakerName)
+  );
+  
+  
+create table ORDERS
+	(	OrderID			varchar(10)		not null,
+		OrderTime		time 			not null,
+	 	PaymentType		varchar(10)		not null,
+		MemberID		varchar(5)		not null,
+	primary key (OrderID)
+	);
+	
+create table BRAND_MAKERS
+	(	MakerName		varchar(30)		not null,
+		BrandName		varchar(30)		not null,
+		primary key (MakerName, BrandName)
+	);
+	
+create table TAGGED_PRODUCTS
+	(	UPC				char(11)			not null,
+		TagName			varchar(30)		not null,
+		primary key (UPC, TagName),
+		foreign key (UPC) references PRODUCTS (UPC),
+		foreign key (TagName) references TAGS (TagName)
+	);
+	
+	
+create table CERT_PRODUCTS
+	(	UPC					char(11)			not null,
+		CertName			varchar(50)		not null,
+		primary key (UPC, CertName),
+		foreign key (UPC) references PRODUCTS (UPC),
+		foreign key (CertName) references CERTIFICATIONS (CertName)
+	);
 
-  SELECT dbo.PRODUCTS.UPC, dbo.DISTRIBUTORS.Name, dbo.DIST_PRODUCTS.WHCost
-  FROM dbo.PRODUCTS 
-  JOIN dbo.DIST_PRODUCTS
-  ON dbo.PRODUCTS.UPC = dbo.DIST_PRODUCTS.UPC
-  JOIN dbo.DISTRIBUTORS
-  ON dbo.DIST_PRODUCTS.DistID = dbo.DISTRIBUTORS.DistID
-  WHERE dbo.PRODUCTS.UPC = 74574014005;
+create table DIST_PRODUCTS
+	(	DistID				varchar(10)		not null,
+		UPC					char(11)			not null,
+		WHCost				decimal(6,2)	not null,	
+	Primary key (DistID, UPC),
+	foreign key (DistID) references DISTRIBUTORS (DistID),
+	foreign key (UPC) references PRODUCTS (UPC),
+	);
+	
+	
+create table EMPLOYEES
+	(	EmpID				varchar(10)		not null,
+		FName				varchar(15)		not null,
+		Lname				varchar(15)		not null,
+		Email				varchar(30)		not null,
+		Phone				varchar(30)		not null,
+		DOB					DATE			not null,
+		SSN					varchar(15)		not null,
+		StartDate			DATE			not null,
+		ManagerID			varchar(10)		not null,
+	 Primary Key(EmpID),
+	 Foreign key (ManagerID) references MANAGERS (ManagerID),
+	 unique (SSN)
+	 );
+create table LOCATION_PRODUCTS
+	(	UPC					char(11)			not null,
+		LocationName		varchar(30)		not null,
+		BIN					varchar(30),
+		Shelf				varchar(30),
+		OutFront			int,
+		InBack				int,
+		primary key (UPC, LocationName),
+		foreign key (UPC) references PRODUCTS (UPC),
+		foreign key (LocationName) references LOCATIONS (LocationName)
+	);
+	
+create table COUPONS
+	(	CouponID		varchar(10)		not null,
+		AmountSaved		decimal(6,2)	not null,
+	primary key (CouponID)
+	);	
+	
 
-  SELECT dbo.PRODUCTS.UPC, dbo.PRODUCTS.Description, dbo.CERT_PRODUCTS.CertName
-  FROM dbo.PRODUCTS
-  JOIN dbo.CERT_PRODUCTS
-  ON dbo.PRODUCTS.UPC = dbo.CERT_PRODUCTS.UPC
-  WHERE dbo.CERT_PRODUCTS.CertName = 'Halal' OR dbo.CERT_PRODUCTS.CertName = 'Kosher';
+create table ORDERED_PRODUCTS
+	(	OrderID			varchar(10)		not null,
+		UPC				char(11)		not null,
+		Quantity		int				not null,
+		CouponID		varchar(10),
+	primary key (OrderID, UPC),
+	foreign key (OrderID) references ORDERS (OrderID),
+	foreign key (UPC) references PRODUCTS (UPC),
+	foreign key (CouponID) references COUPONS (CouponID)
+	);
 
-SELECT	Tag
-FROM		dbo.PRODUCTl
-WHERE	Tag = “Made by hand”
 
-
-
-SELECT	MakerID, MoneyOwed
-FROM		dbo.COUPON
-
-SELECT	PaymentMethods
-FROM		dbo.CUSTOMER
-WHERE	FirstName = “customer” AND LastName = “name”;
+create table IN_PERSON
+	(	EmpID			varchar(10)			not null,
+		OrderID 		varchar(10)			not null,
+	primary key (EmpID, OrderID),
+	foreign key (EmpID) references EMPLOYEES (EmpID),
+	foreign key (OrderID) references ORDERS (OrderID)
+	);
