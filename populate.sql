@@ -51,13 +51,15 @@ values ('Haagen-Dazs'),
   ('Belvita'),
   ('Teddy Grahams'),
   ('Triscuits'),
-  ('Wheat Thins');
+  ('Wheat Thins'),
+  ('Morton Salt'),
+  ('Powerbeads by Jen');
  
 insert into CERTIFICATIONS
 values ('Vegetarian'), ('Vegan'), ('American Grass Fed'), ('Animal Welfare Approved'), ('USDA Organic'), 
 ('Food Alliance Certified'), ('Salmon Safe'), ('Soil Association Certified Organic'), ('Marine Stewardship Council'), 
 ('Rain Forest Alliance Certified'), ('U.S. Department of Commerce Dolphin Safe'), ('Fair Trade Certified'),('Fair Trade Federation'), 
-('Non-GMO'), ('Non-MSG'), ('Made in America'), ('Made in China'),('Halal');
+('Non-GMO'), ('Non-MSG'), ('Made in America'), ('Made in China'),('Halal'),('Kosher');
 
 insert into DISTRIBUTORS
 values ('1','A&B Distributors','1001001000','1 main street'), ('2','A&B Distributors','1001001000','123 purple street'),
@@ -90,7 +92,9 @@ VALUES ('Nestle','595-454-3059', '123 purple street'),
  ('McVite''s','987-377-3039', '534 5th street'),
   ('Cadbury', '377-947-0938', '644 23rd street'),
   ('United Biscuits', '489-095-0395', '63 2nd street'),
-  ('Tasty Baking Company', '389-095-9304', '630 12th street');
+  ('Tasty Baking Company', '389-095-9304', '630 12th street'),
+  ('K+S AG', '736-038-3738', '89 8th Street'),
+  ('Powerbeads by Jen', '273-048-0495', '96 11th Street');
 
 INSERT INTO CUSTOMERS
 VALUES ('1','Joe', 'Smith', 'joesmith@email.com', '100-000-0000','4321323454349999'), 
@@ -179,7 +183,9 @@ VALUES ('74570014002', 'Chocolate', 'pint', 'Nestle', 5.49, 8), ('74570014003', 
 ('67593759505', 'Peas Baby Food', '5 oz', 'Nestle', 2.99, 9),
 ('67593759506', 'Yams Baby Food', '5 oz', 'Nestle', 2.99, 2),
 ('67593759507', 'Squash Baby Food', '5 oz', 'Nestle', 2.99, 4),
-('67593759508', 'Apple Baby Food', '5 oz', 'Nestle', 2.99, 7)
+('67593759508', 'Apple Baby Food', '5 oz', 'Nestle', 2.99, 7),
+('67595759506', 'Salt', '2 lb', 'Morton Salt', 'K+S AG', 1.99, 7),
+('46736485906', 'Power Beads', '2 oz', 'Powerbeads by Jen', 'Powerbeads by Jen', 9.99, 5);
 
 
 
@@ -217,7 +223,8 @@ values ('Nestle', 'Haagen-Dazs'),
   ('Nabisco', 'Wheat Thins'),
   ('Nabisco', 'Teddy Grahams'),
   ('Nabisco', 'Triscuits'),
-  ('Nabisco', 'Belvita');
+  ('Nabisco', 'Belvita'),
+  ('Morton Salt', 'K+S AG');
 
 INSERT INTO TAGGED_PRODUCTS
 VALUES('74570014002','Frozen'),
@@ -237,7 +244,8 @@ VALUES('74570014002','Frozen'),
   ('47589374859', 'Gluten Free'),
   ('47589374859', 'Produce'),
   ('47589374851', 'Fruit'),
-   ('47589374851', 'Dairy Free');
+   ('47589374851', 'Dairy Free'),
+   ('46736485906', 'Made by hand');
   
   
 INSERT INTO CERT_PRODUCTS
@@ -261,7 +269,9 @@ VALUES('74570014002','Vegetarian'),
    ('63726384984', 'Made in America'),
    ('67593759504', 'Fair Trade Federation'),
    ('37468579098','Vegan'),
-   ('37468579098','Vegetarian');
+   ('37468579098','Vegetarian')
+   ('67595759506', 'Kosher'),
+   ('67595759506', 'Halal');
    
 
 INSERT INTO DIST_PRODUCTS
