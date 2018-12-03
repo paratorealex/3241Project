@@ -53,7 +53,8 @@ values ('Haagen-Dazs'),
   ('Triscuits'),
   ('Wheat Thins'),
   ('Morton Salt'),
-  ('Powerbeads by Jen');
+  ('Powerbeads by Jen'),
+  ('Local');
  
 insert into CERTIFICATIONS
 values ('Vegetarian'), ('Vegan'), ('American Grass Fed'), ('Animal Welfare Approved'), ('USDA Organic'), 
@@ -224,6 +225,7 @@ values ('Nestle', 'Haagen-Dazs'),
   ('Nabisco', 'Teddy Grahams'),
   ('Nabisco', 'Triscuits'),
   ('Nabisco', 'Belvita'),
+  ('Smith''s Farm', 'Local'),
   ('K+S AG', 'Morton Salt');
 
 INSERT INTO TAGGED_PRODUCTS
