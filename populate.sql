@@ -73,6 +73,7 @@ values ('1','A&B Distributors','1001001000','1 main street'), ('2','A&B Distribu
 ('9','H Distributors','1001001007','453 yellow street'), ('16','Q Distributors','1001041000','54 14th street'),
 ('19','I Distributors','1001001080','345 sunny street'), ('17','R Distributors','1202001000','65 15th street'), 
 ('20','J Distributors','1001001009','1220 orange street'), ('18','S Distributors','1501501000','1302 16th street')
+
 insert into MAKERS
 VALUES ('Nestle','595-454-3059', '123 purple street'),
  ('Dean Foods', '746-985-9846','970 high street'),
@@ -185,9 +186,8 @@ VALUES ('74570014002', 'Chocolate', 'pint', 'Nestle', 5.49, 8), ('74570014003', 
 ('67593759506', 'Yams Baby Food', '5 oz', 'Nestle', 2.99, 2),
 ('67593759507', 'Squash Baby Food', '5 oz', 'Nestle', 2.99, 4),
 ('67593759508', 'Apple Baby Food', '5 oz', 'Nestle', 2.99, 7),
-('67595759506', 'Salt', '2 lb', 'Morton Salt', 'K+S AG', 1.99, 7),
-('46736485906', 'Power Beads', '2 oz', 'Powerbeads by Jen', 'Powerbeads by Jen', 9.99, 5);
-
+('67595759506', 'Salt', '2 lb', 'K+S AG', 1.99, 7),
+('46736485906', 'Power Beads', '2 oz', 'Powerbeads by Jen', 9.99, 5);
 
 
 insert into ORDERS
@@ -225,8 +225,8 @@ values ('Nestle', 'Haagen-Dazs'),
   ('Nabisco', 'Teddy Grahams'),
   ('Nabisco', 'Triscuits'),
   ('Nabisco', 'Belvita'),
-  ('Morton Salt', 'K+S AG'),
-  ('Smith''s Farm', 'Local');
+  ('Smith''s Farm', 'Local'),
+  ('K+S AG', 'Morton Salt');
 
 INSERT INTO TAGGED_PRODUCTS
 VALUES('74570014002','Frozen'),
@@ -271,7 +271,7 @@ VALUES('74570014002','Vegetarian'),
    ('63726384984', 'Made in America'),
    ('67593759504', 'Fair Trade Federation'),
    ('37468579098','Vegan'),
-   ('37468579098','Vegetarian')
+   ('37468579098','Vegetarian'),
    ('67595759506', 'Kosher'),
    ('67595759506', 'Halal');
    
