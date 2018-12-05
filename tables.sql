@@ -66,7 +66,8 @@ create table PRODUCTS
 		primary key (UPC),
 		foreign key (BrandName) references BRANDS (BrandName)
   );
-  
+create index IX_PRODUCTS_price
+ON PRODUCTS(Price ASC);  
   
 create table ORDERS
 	(	OrderID			varchar(10)		not null,
@@ -76,7 +77,8 @@ create table ORDERS
 		MemberID		varchar(5)		not null,
 	primary key (OrderID)
 	);
-	
+create index IX_ORDERS_member
+ON ORDERS(MemberID ASC);
 	
 create table TAGGED_PRODUCTS
 	(	UPC				char(11)			not null,
