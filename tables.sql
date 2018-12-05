@@ -157,3 +157,12 @@ create table IN_PERSON
 	foreign key (EmpID) references EMPLOYEES (EmpID),
 	foreign key (OrderID) references ORDERS (OrderID)
 	);
+	
+	
+	
+
+create index IX_productPrice
+ON PRODUCTS (Price ASC);
+
+
+
