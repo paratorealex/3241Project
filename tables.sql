@@ -2,10 +2,7 @@ create table TAGS
 	(	TagName 		varchar(30) 	not	null,
 		primary key (TagName)
 	);
-	create table BRANDS
-	(	BrandName		varchar(30)		not null,
-		primary key (BrandName)
-	);
+
 create table CERTIFICATIONS
 	(	CertName		varchar(50)		not null,
 		primary key (CertName)
@@ -51,32 +48,35 @@ create table LOCATIONS
 	(	LocationName		varchar(30)		not null,
 		primary key (LocationName)
 	);
-	 
+	
+create table BRANDS
+	(	BrandName		varchar(30)		not null,	
+		MakerName		varchar(30)		not null,
+		primary key (BrandName),
+		foreign key (MakerName) references MAKERS (MakerName)
+	);
+	
 create table PRODUCTS
 	(	UPC				char(11)		not null,
 		Description		varchar(50)		not null,
 		PSize			varchar(10),
-		MakerName		varchar(30)		not null,				
+		BrandName		varchar(30)		not null,				
 		Price			decimal(6,2)	not null,
 		MinOrderCount		int			not null,
 		primary key (UPC),
-		foreign key (MakerName) references MAKERS (MakerName)
+		foreign key (BrandName) references BRANDS (BrandName)
   );
   
   
 create table ORDERS
 	(	OrderID			varchar(10)		not null,
+		OrderDate		date			not null,
 		OrderTime		time 			not null,
 	 	PaymentType		varchar(10)		not null,
 		MemberID		varchar(5)		not null,
 	primary key (OrderID)
 	);
 	
-create table BRAND_MAKERS
-	(	MakerName		varchar(30)		not null,
-		BrandName		varchar(30)		not null,
-		primary key (MakerName, BrandName)
-	);
 	
 create table TAGGED_PRODUCTS
 	(	UPC				char(11)			not null,
@@ -143,6 +143,7 @@ create table ORDERED_PRODUCTS
 		UPC				char(11)		not null,
 		Quantity		int				not null,
 		CouponID		varchar(10),
+		CouponPaid		char(1),
 	primary key (OrderID, UPC),
 	foreign key (OrderID) references ORDERS (OrderID),
 	foreign key (UPC) references PRODUCTS (UPC),
