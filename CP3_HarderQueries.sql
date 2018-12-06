@@ -1,33 +1,46 @@
-		--need data
+		--items in back that are not outfront
 		SELECT	PRODUCTS.UPC
 		FROM	PRODUCTS
 		JOIN	LOCATION_PRODUCTS ON PRODUCTS.UPC = LOCATION_PRODUCTS.UPC
 		WHERE	InBack > 0 AND OutFront = 0;
 
-		SELECT	PRODUCTS.UPC, PRODUCTS.Description, (COUNT(LOCATION_PRODUCTS.LocationName)) as 'Locations'
+		--product located in the most places in the store
+		SELECT MAX(y.Loc) as 'MaxLocations'
+		FROM(
+		SELECT	PRODUCTS.UPC, PRODUCTS.Description, (COUNT(LOCATION_PRODUCTS.LocationName)) as 'Loc'
+		FROM	PRODUCTS
+		JOIN	LOCATION_PRODUCTS ON PRODUCTS.UPC = LOCATION_PRODUCTS.UPC
+		GROUP BY PRODUCTS.UPC, PRODUCTS.Description) y;
+
+		SELECT	PRODUCTS.UPC, PRODUCTS.Description
 		FROM	PRODUCTS
 		JOIN	LOCATION_PRODUCTS ON PRODUCTS.UPC = LOCATION_PRODUCTS.UPC
 		GROUP BY PRODUCTS.UPC, PRODUCTS.Description
-		ORDER BY Locations DESC;
+		HAVING (COUNT(LOCATION_PRODUCTS.LocationName) = 4);
 
+		--all Product descriptions and Dates of Purchase by designated MemberID
 		SELECT	PRODUCTS.Description, ORDERS.OrderDate
 		FROM	PRODUCTS
 		JOIN	ORDERED_PRODUCTS ON PRODUCTS.UPC = ORDERED_PRODUCTS.UPC
 		JOIN	ORDERS ON ORDERED_PRODUCTS.OrderID = ORDERS.OrderID
 		WHERE	ORDERS.MemberID = 2;
- 
+		
+		--description and UPC for all products with less than minOrderCount in stock
 		SELECT 	PRODUCTS.Description, PRODUCTS.UPC, PRODUCTS.MinOrderCount, (LOCATION_PRODUCTS.OutFront + LOCATION_PRODUCTS.InBack) AS 'InStock'
 		FROM 	PRODUCTS
 		JOIN	LOCATION_PRODUCTS ON PRODUCTS.UPC = LOCATION_PRODUCTS.UPC
 		WHERE	PRODUCTS.MinOrderCount > (LOCATION_PRODUCTS.OutFront + LOCATION_PRODUCTS.InBack);
  
+		--All customers who purchased a 'Local' brand product and the product description
 		SELECT	ORDERS.MemberID, PRODUCTS.Description
 		FROM	PRODUCTS
 		JOIN	BRANDS ON BRANDS.BrandName = PRODUCTS.BrandName
 		JOIN	ORDERED_PRODUCTS ON PRODUCTS.UPC = ORDERED_PRODUCTS.UPC
 		JOIN	ORDERS ON ORDERED_PRODUCTS.OrderID = ORDERS.OrderID
-		WHERE	BRANDS.BrandName = 'Local';
+		WHERE	BRANDS.BrandName = 'Local'
+		ORDER BY ORDERS.MemberID ASC;
 		
+		--Total number of products ordered by a designated customer
 		SELECT	CUSTOMERS.MemberID, (SUM(ORDERED_PRODUCTS.Quantity)) as 'ProductsPurchased'
 		FROM	ORDERED_PRODUCTS
 		JOIN	ORDERS ON ORDERS.OrderID = ORDERED_PRODUCTS.OrderID
@@ -35,7 +48,7 @@
 		WHERE CUSTOMERS.MemberID = 1
 		GROUP BY CUSTOMERS.MemberID;
 		
-		--fix this
+		--Customer who has made the most orders and the total amount they've spent
  		SELECT	DISTINCT CUSTOMERS.MemberID, (ORDERED_PRODUCTS.Quantity * PRODUCTS.Price) as 'TotalSpent'
 		FROM 	CUSTOMERS
 		JOIN	ORDERS ON CUSTOMERS.MemberID = ORDERS.MemberID
