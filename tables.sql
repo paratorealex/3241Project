@@ -53,7 +53,7 @@ create table BRANDS
 	(	BrandName		varchar(30)		not null,	
 		MakerName		varchar(30)		not null,
 		primary key (BrandName),
-		foreign key (MakerName) references MAKERS (MakerName)
+		foreign key (MakerName) references MAKERS (MakerName) on delete cascade
 	);
 	
 create table PRODUCTS
@@ -64,7 +64,7 @@ create table PRODUCTS
 		Price			decimal(6,2)	not null,
 		MinOrderCount		int			not null,
 		primary key (UPC),
-		foreign key (BrandName) references BRANDS (BrandName)
+		foreign key (BrandName) references BRANDS (BrandName) on delete cascade
   );
 create index IX_PRODUCTS_price
 ON PRODUCTS(Price ASC);  
@@ -84,8 +84,8 @@ create table TAGGED_PRODUCTS
 	(	UPC				char(11)			not null,
 		TagName			varchar(30)		not null,
 		primary key (UPC, TagName),
-		foreign key (UPC) references PRODUCTS (UPC),
-		foreign key (TagName) references TAGS (TagName)
+		foreign key (UPC) references PRODUCTS (UPC) on delete cascade,
+		foreign key (TagName) references TAGS (TagName) on delete cascade
 	);
 	
 	
@@ -93,8 +93,8 @@ create table CERT_PRODUCTS
 	(	UPC					char(11)			not null,
 		CertName			varchar(50)		not null,
 		primary key (UPC, CertName),
-		foreign key (UPC) references PRODUCTS (UPC),
-		foreign key (CertName) references CERTIFICATIONS (CertName)
+		foreign key (UPC) references PRODUCTS (UPC) on delete cascade,
+		foreign key (CertName) references CERTIFICATIONS (CertName) on delete cascade
 	);
 
 create table DIST_PRODUCTS
@@ -102,8 +102,8 @@ create table DIST_PRODUCTS
 		UPC					char(11)			not null,
 		WHCost				decimal(6,2)	not null,	
 	Primary key (DistID, UPC),
-	foreign key (DistID) references DISTRIBUTORS (DistID),
-	foreign key (UPC) references PRODUCTS (UPC),
+	foreign key (DistID) references DISTRIBUTORS (DistID) on delete cascade,
+	foreign key (UPC) references PRODUCTS (UPC) on delete cascade
 	);
 	
 	
@@ -118,7 +118,7 @@ create table EMPLOYEES
 		StartDate			DATE			not null,
 		ManagerID			varchar(10)		not null,
 	 Primary Key(EmpID),
-	 Foreign key (ManagerID) references MANAGERS (ManagerID),
+	 Foreign key (ManagerID) references MANAGERS (ManagerID) on delete cascade,
 	 unique (SSN)
 	 );
 create table LOCATION_PRODUCTS
@@ -129,8 +129,8 @@ create table LOCATION_PRODUCTS
 		OutFront			int,
 		InBack				int,
 		primary key (UPC, LocationName),
-		foreign key (UPC) references PRODUCTS (UPC),
-		foreign key (LocationName) references LOCATIONS (LocationName)
+		foreign key (UPC) references PRODUCTS (UPC) on delete cascade,
+		foreign key (LocationName) references LOCATIONS (LocationName) on delete cascade
 	);
 	
 create table COUPONS
@@ -147,9 +147,9 @@ create table ORDERED_PRODUCTS
 		CouponID		varchar(10),
 		CouponPaid		char(1),
 	primary key (OrderID, UPC),
-	foreign key (OrderID) references ORDERS (OrderID),
-	foreign key (UPC) references PRODUCTS (UPC),
-	foreign key (CouponID) references COUPONS (CouponID)
+	foreign key (OrderID) references ORDERS (OrderID) on delete cascade,
+	foreign key (UPC) references PRODUCTS (UPC) on delete cascade,
+	foreign key (CouponID) references COUPONS (CouponID) on delete cascade
 	);
 
 
@@ -157,6 +157,6 @@ create table IN_PERSON
 	(	EmpID			varchar(10)			not null,
 		OrderID 		varchar(10)			not null,
 	primary key (EmpID, OrderID),
-	foreign key (EmpID) references EMPLOYEES (EmpID),
-	foreign key (OrderID) references ORDERS (OrderID)
+	foreign key (EmpID) references EMPLOYEES (EmpID) on delete cascade,
+	foreign key (OrderID) references ORDERS (OrderID) on delete cascade
 	);
