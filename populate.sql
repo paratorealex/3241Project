@@ -1,3 +1,5 @@
+-- Inserting data for Tags table
+
 insert into TAGS
 values ('Frozen'),
 ('Dessert'),
@@ -21,11 +23,15 @@ values ('Frozen'),
 ('Steak'),
 ('Bacon');
  
+ -- Inserting data for certifications table
+ 
 insert into CERTIFICATIONS
 values ('Vegetarian'), ('Vegan'), ('American Grass Fed'), ('Animal Welfare Approved'), ('USDA Organic'), 
 ('Food Alliance Certified'), ('Salmon Safe'), ('Soil Association Certified Organic'), ('Marine Stewardship Council'), 
 ('Rain Forest Alliance Certified'), ('U.S. Department of Commerce Dolphin Safe'), ('Fair Trade Certified'),('Fair Trade Federation'), 
 ('Non-GMO'), ('Non-MSG'), ('Made in America'), ('Made in China'),('Halal'),('Kosher');
+
+-- Inserting data for Distributors table
 
 insert into DISTRIBUTORS
 values ('1','A&B Distributors','1001001000','1 main street'), ('2','A&B Distributors','1001001000','123 purple street'),
@@ -38,6 +44,8 @@ values ('1','A&B Distributors','1001001000','1 main street'), ('2','A&B Distribu
 ('9','H Distributors','1001001007','453 yellow street'), ('16','Q Distributors','1001041000','54 14th street'),
 ('19','I Distributors','1001001080','345 sunny street'), ('17','R Distributors','1202001000','65 15th street'), 
 ('20','J Distributors','1001001009','1220 orange street'), ('18','S Distributors','1501501000','1302 16th street')
+
+-- Inserting data for Makers table
 
 insert into MAKERS
 VALUES ('Nestle','595-454-3059', '123 purple street'),
@@ -62,6 +70,8 @@ VALUES ('Nestle','595-454-3059', '123 purple street'),
   ('K+S AG', '736-038-3738', '89 8th Street'),
   ('Powerbeads by Jen', '273-048-0495', '96 11th Street');
 
+  -- Inserting data for customers table
+  
 INSERT INTO CUSTOMERS
 VALUES ('1','Joe', 'Smith', 'joesmith@email.com', '100-000-0000','4321323454349999'), 
 ('2','John', 'Brown', 'johnbrown@email.com', '200-000-0000','4321323454349998'), 
@@ -84,6 +94,8 @@ VALUES ('1','Joe', 'Smith', 'joesmith@email.com', '100-000-0000','43213234543499
 ('19','Jason', 'High', 'jasonhigh@email.com', '200-000-0000','4321323454349981'), 
 ('20','Jim', 'Blake', 'jimblake@email.com', '210-000-0000','4321323454349980')
 
+-- Inserting data for managers table
+
 INSERT INTO MANAGERS
 VALUES ('1','John','Deer','johnd@email.com','211-111-1111','1990-01-01','122-23-2222','2011-01-01'), 
 ('2','Joe','Dog','joedog@email.com','212-111-1111','1988-01-01','232-23-2222','2012-01-01'), 
@@ -105,6 +117,8 @@ VALUES ('1','John','Deer','johnd@email.com','211-111-1111','1990-01-01','122-23-
 ('18','Lisa','Monday','lisam@email.com','211-111-8111','1990-01-01','222-23-2229','2011-01-01'), 
 ('19','Meg','Tuesday','megt@email.com','211-111-1811','1991-01-01','277-23-2222','2011-01-01'), 
 ('20','Jack','Friday','jackf@email.com','211-111-1911','1992-01-01','288-23-2222','2012-01-01')
+
+-- Inserting data for Locations table
 
 insert into LOCATIONS
 values ('CheckoutCooler1'),
@@ -129,6 +143,8 @@ values ('CheckoutCooler1'),
 ('FreshProduceBin1'),
 ('FreshProduceBin2');
 
+
+-- Inserting data for brands table
 
 insert into BRANDS
 values ('Haagen-Dazs','Nestle'),
@@ -156,7 +172,9 @@ values ('Haagen-Dazs','Nestle'),
   ('Morton' ,'K+S AG'),
   ('Good Fish','Mondelez International'),
   ('Jen''s Beads', 'Powerbeads by Jen');
-  
+ 
+-- Inserting data for Products table
+ 
 INSERT INTO PRODUCTS
 VALUES ('74570014002', 'Chocolate', 'pint', 'Haagen-Dazs', 5.49, 8), ('74570014003', 'Vanilla', 'pint', 'Haagen-Dazs', 5.49, 9),
  ('63726384982', 'New York Strip','8 oz','Local', 6.69, 5),
@@ -180,6 +198,8 @@ VALUES ('74570014002', 'Chocolate', 'pint', 'Haagen-Dazs', 5.49, 8), ('745700140
 ('67595759506', 'Salt', '2 lb', 'Morton', 1.99, 7),
 ('46736485906', 'Power Beads', '2 oz', 'Jen''s Beads', 9.99, 5);
 
+-- Inserting data for orders table
+
 insert into ORDERS
 values ('38375', '2018-04-12','05:13:33','cash', '1'), ('38374', '2017-03-11','01:13:36','cash', '2'),
 ('38355', '2018-04-15','03:25:34','card', '3'), ('38366', '2018-06-12','02:03:57','cash', '4'), 
@@ -192,6 +212,8 @@ values ('38375', '2018-04-12','05:13:33','cash', '1'), ('38374', '2017-03-11','0
 ('38371', '2018-04-15','01:43:33','cash', '16'), ('38382', '2014-02-12','01:13:33','cash', '19'), 
 ('38321', '2018-04-12','07:23:59','cash', '17'), ('38923', '2012-04-12','01:13:33','cash', '20'),
 ('33475', '2012-04-12','07:13:33','card', '21');
+
+-- Inserting data for Tagged products table
 
 INSERT INTO TAGGED_PRODUCTS
 VALUES('74570014002','Frozen'),
@@ -214,6 +236,7 @@ VALUES('74570014002','Frozen'),
    ('47589374851', 'Dairy Free'),
    ('46736485906', 'Made by hand');
   
+ -- Inserting data for products certifications table 
   
 INSERT INTO CERT_PRODUCTS
 VALUES('74570014002','Vegetarian'),
@@ -240,6 +263,7 @@ VALUES('74570014002','Vegetarian'),
    ('67595759506', 'Kosher'),
    ('67595759506', 'Halal');
    
+-- Inserting data for Distributors Products table
 
 INSERT INTO DIST_PRODUCTS
 VALUES('1','74570014002', 4.57),
@@ -263,6 +287,8 @@ VALUES('1','74570014002', 4.57),
 ('17', '67593759507',9.09),
 ('18','67593759508',8.99);
 
+-- Inserting data for Employees table
+
 INSERT INTO EMPLOYEES
 VALUES ('1','Nick','Brown','nickbrown@email.com','211-119-1111','1988-02-01','222-23-2220','2010-01-12', '1'), 
 ('2','John','Black','johnblack@email.com','211-119-1112','1990-04-01','222-23-2221','2012-02-08', '1'), 
@@ -284,6 +310,8 @@ VALUES ('1','Nick','Brown','nickbrown@email.com','211-119-1111','1988-02-01','22
 ('18','Kyle','Wright','kylew@email.com','211-119-1128','1988-10-01','222-23-2237','2013-01-09', '2'), 
 ('19','Tyler','Smith','tylers@email.com','211-119-1129','1990-12-12','222-23-2238','2012-07-03', '5'), 
 ('20','Cat','Dog','catdog@email.com','211-119-1130','1988-12-11','222-23-2239','2011-01-05', '1')
+
+-- Inserting data for location products table
 
 insert into LOCATION_PRODUCTS
 values ('74570014002','CheckoutCooler1','left','top',4,1),
@@ -308,6 +336,8 @@ values ('74570014002','CheckoutCooler1','left','top',4,1),
 ('57463859602', 'Aisle1', 'left', 'top', 0, 4),
 ('56749906857', 'Aisle1', 'middle', 'top', 3, 0);
 
+-- Inserting data for coupons table
+
 insert into COUPONS
 values ('2749274638', 1),
 ('1094568392', 2), ('2422343243', 1),
@@ -322,6 +352,8 @@ values ('2749274638', 1),
 ('509465492', 1), ('3365233213', 0.5),
 ('6045640322', 3),('1256764544',1.5);
 
+-- Inserting data for Ordered products table
+
 insert into ORDERED_PRODUCTS
 values ('38374','74570014002', 2, '2749274638','y'),
 ('38374','63726384982', 1, '1094568392','y'), ('38374','56749906858', 5, null, null),
@@ -334,6 +366,8 @@ values ('38374','74570014002', 2, '2749274638','y'),
 ('38377','63726384982', 8, '6045640322','n'), ('38365','56749906851', 4, null, null), 
 ('38365', '47589374851', 2,'1094568392','y'),('38923', '74570014002', 6, '1256555534','n'),
 ('38321','36289367281', 6, null, null);
+
+-- Inserting data for in person orders table
 
 insert into IN_PERSON
 values ('1','38374'), ('2','38375'), ('3','33474'), 
